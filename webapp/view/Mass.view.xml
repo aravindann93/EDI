@@ -1,0 +1,99 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:uxap="sap.uxap" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified"
+	xmlns:l="sap.ui.layout.form" controllerName="com.olympus.apps.edi.controller.Mass">
+	<Page title="Mass File Upload">
+		<content>
+			<l:SimpleForm editable="true">
+				<l:content>
+					<HBox xmlns:mvc="sap.ui.core.mvc" xmlns:uxap="sap.uxap" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified" xmlns:l="sap.ui.layout.form"
+						xmlns="sap.m" width="100%" id="hbox0_1541675353522_copy">
+						<items>
+							<HBox xmlns:mvc="sap.ui.core.mvc" xmlns:uxap="sap.uxap" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified" xmlns:l="sap.ui.layout.form"
+								xmlns="sap.m" width="20%" id="hbox2_copy"/>
+							<Label text="ECC" width="100%" id="label2"/>
+							<RadioButton xmlns:mvc="sap.ui.core.mvc" xmlns:uxap="sap.uxap" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified"
+								xmlns:l="sap.ui.layout.form" xmlns="sap.m" text="Inbound" id="button1"/>
+							<RadioButton xmlns:mvc="sap.ui.core.mvc" xmlns:uxap="sap.uxap" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified"
+								xmlns:l="sap.ui.layout.form" xmlns="sap.m" text="Outbound" id="button2"/>
+							<HBox xmlns:mvc="sap.ui.core.mvc" xmlns:uxap="sap.uxap" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified" xmlns:l="sap.ui.layout.form"
+								xmlns="sap.m" width="10%" id="hbox2_copy2"/>
+							<Label xmlns:mvc="sap.ui.core.mvc" xmlns:uxap="sap.uxap" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified" xmlns:l="sap.ui.layout.form"
+								xmlns="sap.m" text="CRM" width="100%" id="label1_copy3"/>
+							<RadioButton xmlns:mvc="sap.ui.core.mvc" xmlns:uxap="sap.uxap" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified"
+								xmlns:l="sap.ui.layout.form" xmlns="sap.m" text="Inbound" id="button3"/>
+							<RadioButton xmlns:mvc="sap.ui.core.mvc" xmlns:uxap="sap.uxap" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified"
+								xmlns:l="sap.ui.layout.form" xmlns="sap.m" text="Outbound" id="button4"/>
+						</items>
+					</HBox>
+					<Label text="File Name"/>
+					<VBox>
+						<u:FileUploader id="idfileUploader" width="50%" sameFilenameAllowed="false" buttonText="" fileType="CSV" placeholder="Choose a CSV file"
+							style="Emphasized"/>
+						<items>
+							<HBox width="100%" id="hbox1">
+								<items>
+									<Button xmlns="sap.m" text="Upload" press="onUpload"/>
+									<HBox width="20%" id="hbox2"/>
+									<Button xmlns="sap.m" text="Save" press="saveData"/>
+								</items>
+							</HBox>
+						</items>
+					</VBox>
+				</l:content>
+			</l:SimpleForm>
+			<Table id="idTable" items="{/}" visible="true">
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{Account}"/>
+							<Text text="{MessageType}"/>
+							<Text text="{PartnerType}"/>
+							<Text text="{MessageCode}"/>
+							<Text text="{MessageFunction}"/>
+							<Text text="{PartnerRole}"/>
+							<Text text="{ProcessCode}"/>
+							<Text text="{Functionmodule}"/>
+							<Text text="{TelephoneNumber}"/>
+							<Text text="{Name}"/>
+							<Text text="{Company}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+				<columns>
+					<Column>
+						<Text text="Account"/>
+					</Column>
+					<Column>
+						<Text text="Message Type"/>
+					</Column>
+					<Column>
+						<Text text="Partner Type"/>
+					</Column>
+					<Column>
+						<Text text="Message Code"/>
+					</Column>
+					<Column>
+						<Text text="Message Function"/>
+					</Column>
+					<Column>
+						<Text text="Partner Role"/>
+					</Column>
+					<Column>
+						<Text text="Process Code"/>
+					</Column>
+					<Column>
+						<Text text="Processing by function module"/>
+					</Column>
+					<Column>
+						<Text text="Telephone Number"/>
+					</Column>
+					<Column>
+						<Text text="Name"/>
+					</Column>
+					<Column>
+						<Text text="Company"/>
+					</Column>
+				</columns>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>
